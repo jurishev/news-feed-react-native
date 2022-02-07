@@ -18,19 +18,20 @@ const styles = StyleSheet.create({
         padding: 16,
     },
     title: {
+        fontFamily: 'Oswald_400Regular',
         fontSize: 24,
-        fontWeight: 'bold',
+        lineHeight: 32,
     },
     image: {
-        marginTop: 8,
+        marginTop: 12,
         borderRadius: 8,
         height: 200,
     },
     content: {
-        marginTop: 8,
+        marginTop: 12,
     },
     source: {
-        marginTop: 8,
+        marginTop: 12,
         fontSize: 10,
         color: 'dodgerblue',
     }
