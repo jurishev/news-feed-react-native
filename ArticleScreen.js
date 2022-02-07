@@ -1,4 +1,4 @@
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { StyleSheet, View, Text, Image, Linking, TouchableOpacity } from 'react-native';
 
 export default function ArticleScreen({ route }) {
     return (
@@ -6,7 +6,9 @@ export default function ArticleScreen({ route }) {
             <Text style={styles.title}>{route.params.title}</Text>
             <Image style={styles.image} source={{ uri: route.params.image }} resizeMode='cover' />
             <Text style={styles.content}>{route.params.content}</Text>
-            <Text style={styles.source}>{route.params.url}</Text>
+            <TouchableOpacity onPress={() => Linking.openURL(route.params.url)}>
+                <Text style={styles.source}>{route.params.url}</Text>
+            </TouchableOpacity>
         </View>
     )
 }
@@ -30,6 +32,6 @@ const styles = StyleSheet.create({
     source: {
         marginTop: 8,
         fontSize: 10,
-        fontStyle: 'italic',
+        color: 'dodgerblue',
     }
 });
