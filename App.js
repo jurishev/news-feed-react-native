@@ -23,10 +23,10 @@ export default function App() {
         <View style={styles.container}>
             <TextInput
                 style={styles.input}
-                placeholder='search keywords'
+                placeholder='Search for news'
                 onChangeText={val => setSearch(val)}
+                onSubmitEditing={getNews}
             />
-            <Button title="get news" onPress={getNews} />
             <View style={styles.list}>
                 <FlatList
                     data={articles}
@@ -40,21 +40,16 @@ export default function App() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#ddd',
-        alignItems: 'center',
-        justifyContent: 'center',
     },
     input: {
         width: '100%',
         backgroundColor: '#eee',
-        padding: 8,
-        textAlign: 'center',
+        paddingHorizontal: 16,
+        paddingVertical: 8,
         marginTop: 40,
-        marginBottom: 16,
     },
     list: {
         flex: 1,
         width: '100%',
-        marginVertical: 16,
     }
 });
