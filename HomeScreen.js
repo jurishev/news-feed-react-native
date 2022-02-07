@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { StyleSheet, View, TextInput, FlatList, TouchableOpacity } from 'react-native';
 import NewsItem from './NewsItem';
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }) {
 
     const [search, setSearch] = useState('');
     const [articles, setArticles] = useState([]);
@@ -31,7 +31,7 @@ export default function HomeScreen() {
                 <FlatList
                     data={articles}
                     renderItem={({ item }) => (
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.navigate('Details', item)}>
                             <NewsItem article={item} />
                         </TouchableOpacity>
                     )}
